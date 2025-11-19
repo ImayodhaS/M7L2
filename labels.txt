@@ -1,0 +1,6 @@
+0 Apel Merah
+1 Pisang 
+2 Apel Busuk
+3 Pisang Busuk
+4 Apel Hijau
+5 Pisang Hijau
