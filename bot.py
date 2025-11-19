@@ -11,16 +11,25 @@ bot = commands.Bot(command_prefix='$', intents=intents)
 
 @bot.event
 async def on_ready():
-    print(f'We have logged in as {bot.user}')
+    print(f'Bot Pengecek Harga {bot.user} Siap Membantu.')
 
 @bot.command()
-async def hello(ctx):
-    await ctx.send(f'Hi! I am a bot {bot.user}!')
+async def Hi(ctx):
+    await ctx.send(f"""
+    Halo! Aku {bot.user}!
+    Aku adalah bot pengecek harga buah apel dan pisang.
+    Gunakan $cekharga untuk mengecek harga
+    """)
 
 @bot.command()
 async def cekharga(ctx):
     if len(ctx.message.attachments) == 0:
-        await ctx.send("⚠️ Kirim gambar bersama perintah ini, contoh:\n`$saveing` + upload gambar.")
+        await ctx.send("""
+        ⚠️ Kirim gambar bersama perintah ini,
+        Contoh:
+           $cekharga + upload gambar.
+        Gambar Yang didukung hanya '.png', '.jpg', '.jpeg', '.gif'
+        """)
         return
 
     for attachment in ctx.message.attachments:
@@ -59,8 +68,4 @@ async def cekharga(ctx):
 async def heh(ctx, count_heh = 5):
     await ctx.send("he" * count_heh)
 
-@bot.command()
-async def ai(ctx):
-    await ctx.send(f'Hi! I am a bot {bot.user}!')
-
-bot.run("MTM4MjM0MDAyODgxNzk5Nzk2NA.GE-1G9.W3SPekAy4PQfzIjL_qWzqPw3ED3OKgruqDhdZQ")
+bot.run("wleee")
